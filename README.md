@@ -1,2 +1,2 @@
-# NoteDB
+# NotesDB
 Notes saved in database

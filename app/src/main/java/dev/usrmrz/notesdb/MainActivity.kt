@@ -22,10 +22,20 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NotesDBTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.TopStart){
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    innerPadding ->
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding),
+                        contentAlignment = Alignment.TopStart
+                    ){
                         MainScreen(
-                            modifier = Modifier.padding(innerPadding)
+//                            modifier = Modifier
+//                                .padding(innerPadding)
                         )
                     }
                 }

@@ -34,8 +34,7 @@ class MainActivity : ComponentActivity() {
                         contentAlignment = Alignment.TopStart
                     ){
                         MainScreen(
-//                            modifier = Modifier
-//                                .padding(innerPadding)
+
                         )
                     }
                 }

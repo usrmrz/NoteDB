@@ -1,6 +1,5 @@
 package dev.usrmrz.notesdb.ui.theme
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -58,5 +58,12 @@ fun MainScreen() {
             }
         }
         Spacer(modifier = Modifier.height(5.dp))
+        LazyColumn(
+            modifier = Modifier.fillMaxWidth()
+        ){
+            items(count = 6){
+                ListItem()
+            }
+        }
     }
 }

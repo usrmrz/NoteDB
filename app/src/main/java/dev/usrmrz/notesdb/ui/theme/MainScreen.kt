@@ -1,11 +1,16 @@
 package dev.usrmrz.notesdb.ui.theme
 
+import android.graphics.drawable.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -36,8 +41,18 @@ fun MainScreen() {
                     Text(text = "Name...")
                 },
                 modifier = Modifier.weight(1f),
-                colors = TextFieldDefaults.textFieldColors(containerColor = Color.White)
+                colors = TextFieldDefaults.textFieldColors(
+                    containerColor = Color.White
+                )
             )
+            IconButton(onClick = {
+                
+            }) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "Add"
+                )
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ activityCompose = "1.9.1"
 composeBom = "2024.08.00"
 annotation = "1.8.2"
 #ksp = "1.9.22-1.0.17"
-#room = "2.6.1"
+room = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,11 +29,10 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
 
-#room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 #room-common = { group = "androidx.room", name = "room-common", version.ref = "room" }
-#room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
-#room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
-
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+#room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

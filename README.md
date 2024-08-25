@@ -43,7 +43,7 @@ path-to-project-folder\NotesDB\app\build.gradle.kts<br>
 dependencies {<br>
 // Add this lines and Comment must be necessarily added too!<br>
 &nbsp;&nbsp;&nbsp;&nbsp;implementation(libs.room.runtime)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;implementation (libs.room.ktx)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;implementation(libs.room.ktx)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;//noinspection KaptUsageInsteadOfKsp<br>
 &nbsp;&nbsp;&nbsp;&nbsp;kapt(libs.room.compiler)
 

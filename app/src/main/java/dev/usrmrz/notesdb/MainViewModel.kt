@@ -7,6 +7,8 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import dev.usrmrz.notesdb.data.MainDb
 
 class MainViewModel(database: MainDb) : ViewModel() {
+    val itemsList = database.dao.getAllItems()
+
     companion object{
         val factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory{
             @Suppress("UNCHECKED_CAST")

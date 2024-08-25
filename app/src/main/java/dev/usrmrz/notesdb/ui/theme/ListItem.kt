@@ -14,9 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import dev.usrmrz.notesdb.data.NameEntity
 
 @Composable
-fun ListItem() {
+fun ListItem(
+    item: NameEntity
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -30,7 +33,7 @@ fun ListItem() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                "Test 1",
+               item.name,
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)

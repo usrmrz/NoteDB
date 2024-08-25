@@ -72,6 +72,7 @@ dependencies {
 
     implementation(libs.androidx.annotation)
     implementation(libs.room.runtime)
+    implementation (libs.room.ktx)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.room.compiler)
     implementation(libs.androidx.lifecycle.viewmodel.compose)

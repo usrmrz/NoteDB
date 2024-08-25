@@ -43,9 +43,9 @@ fun MainScreen(
             verticalAlignment = Alignment.CenterVertically
         ){
             TextField(
-                value = "",
+                value = mainViewModel.newText.value,
                 onValueChange = {
-
+                    mainViewModel.newText.value = it
             },
                 label = {
                     Text(text = "Name...")

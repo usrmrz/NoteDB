@@ -36,12 +36,14 @@ path-to-project-folder\NotesDB\gradle\libs.versions.toml<br>
 [libraries]<br>
 // Add this line<br>
 &nbsp;&nbsp;&nbsp;&nbsp;room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }<br>
 &nbsp;&nbsp;&nbsp;&nbsp;room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 path-to-project-folder\NotesDB\app\build.gradle.kts<br>
 dependencies {<br>
 // Add this lines and Comment must be necessarily added too!<br>
 &nbsp;&nbsp;&nbsp;&nbsp;implementation(libs.room.runtime)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;implementation (libs.room.ktx)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;//noinspection KaptUsageInsteadOfKsp<br>
 &nbsp;&nbsp;&nbsp;&nbsp;kapt(libs.room.compiler)
 

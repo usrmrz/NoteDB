@@ -18,14 +18,16 @@ import dev.usrmrz.notesdb.data.NameEntity
 
 @Composable
 fun ListItem(
-    item: NameEntity
+    item: NameEntity,
+    onClick: (NameEntity) -> Unit,
+    onClickDelete: (NameEntity) -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(5.dp)
             .clickable {
-
+                onClick(item)
             }
     ) {
         Row(
@@ -41,7 +43,7 @@ fun ListItem(
             )
             IconButton(
                 onClick = {
-                    
+                    onClickDelete(item)
             }) {
                 Icon(
                     imageVector = Icons.Default.Delete,

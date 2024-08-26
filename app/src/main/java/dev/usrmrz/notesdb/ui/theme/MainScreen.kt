@@ -11,7 +11,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -26,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.usrmrz.notesdb.MainViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
+//@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
     mainViewModel: MainViewModel = viewModel(factory = MainViewModel.factory)
@@ -37,27 +36,37 @@ fun MainScreen(
             .fillMaxSize()
             .background(Color.White)
     ) {
-        Row (
+        Row(
             modifier = Modifier
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
-        ){
+        ) {
             TextField(
                 value = mainViewModel.newText.value,
                 onValueChange = {
                     mainViewModel.newText.value = it
-            },
+                },
                 label = {
                     Text(text = "Name...")
                 },
                 modifier = Modifier.weight(1f),
-                colors = TextFieldDefaults.textFieldColors(
-                    containerColor = Color.White
+                colors = TextFieldDefaults.colors(
+                    //setting the text field background when it is focused
+//                    focusedContainerColor = Color.White,
+                    //setting the text field background when it is unfocused or initial state
+                    unfocusedContainerColor = Color.White,
+                    //setting the text field background when it is disabled
+//                    disabledContainerColor = Color.White,
+//                    backgroundColor = Color.White
+//                    focusedLabelColor = Color.White,
+//                    unfocusedLabelColor = Color.White,
+//                    disabledLabelColor = Color.White,
                 )
             )
-            IconButton(onClick = {
-                
-            }) {
+            IconButton(
+                onClick = {
+                    mainViewModel.insertItem()
+                }) {
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = "Add"
@@ -67,9 +76,16 @@ fun MainScreen(
         Spacer(modifier = Modifier.height(5.dp))
         LazyColumn(
             modifier = Modifier.fillMaxWidth()
-        ){
-            items(itemsList.value){item ->
-                ListItem(item)
+        ) {
+            items(itemsList.value) { item ->
+                ListItem(item, {
+                    mainViewModel.nameEntity = it
+                    mainViewModel.newText.value = it.name
+                },
+                    {
+                        mainViewModel.deleteItem(it)
+                    }
+                )
             }
         }
     }

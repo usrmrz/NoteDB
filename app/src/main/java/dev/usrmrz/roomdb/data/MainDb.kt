@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb.data
+package dev.usrmrz.roomdb.data
 
 import android.content.Context
 import androidx.room.Database

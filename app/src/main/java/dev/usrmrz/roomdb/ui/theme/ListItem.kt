@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb.ui.theme
+package dev.usrmrz.roomdb.ui.theme
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -14,7 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.usrmrz.notesdb.data.NameEntity
+import dev.usrmrz.roomdb.data.NameEntity
 
 @Composable
 fun ListItem(

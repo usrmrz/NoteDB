@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb
+package dev.usrmrz.roomdb
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
-import dev.usrmrz.notesdb.data.MainDb
-import dev.usrmrz.notesdb.data.NameEntity
+import dev.usrmrz.roomdb.data.MainDb
+import dev.usrmrz.roomdb.data.NameEntity
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val database: MainDb) : ViewModel() {

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.usrmrz.notesdb"
+    namespace = "dev.usrmrz.roomdb"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "dev.usrmrz.notesdb"
+        applicationId = "dev.usrmrz.roomdb"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

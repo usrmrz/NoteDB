@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb
+package dev.usrmrz.roomdb
 
 import org.junit.Test
 

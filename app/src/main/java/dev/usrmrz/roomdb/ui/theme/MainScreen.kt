@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb.ui.theme
+package dev.usrmrz.roomdb.ui.theme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -23,14 +23,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.usrmrz.notesdb.MainViewModel
+import dev.usrmrz.roomdb.MainViewModel
 
 //@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun MainScreen(
-    mainViewModel: MainViewModel = viewModel(factory = MainViewModel.factory)
+    mainViewModel: MainViewModel = viewModel(
+        factory = MainViewModel.factory)
 ) {
-    val itemsList = mainViewModel.itemsList.collectAsState(initial = emptyList())
+    val itemsList = mainViewModel.itemsList.collectAsState(
+        initial = emptyList())
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,21 +50,14 @@ fun MainScreen(
                     mainViewModel.newText.value = it
                 },
                 label = {
-                    Text(text = "Name...")
+                    Text(text = "Add a word...")
                 },
-                modifier = Modifier.weight(1f),
-                colors = TextFieldDefaults.colors(
-                    //setting the text field background when it is focused
-//                    focusedContainerColor = Color.White,
-                    //setting the text field background when it is unfocused or initial state
-                    unfocusedContainerColor = Color.White,
-                    //setting the text field background when it is disabled
-//                    disabledContainerColor = Color.White,
-//                    backgroundColor = Color.White
-//                    focusedLabelColor = Color.White,
-//                    unfocusedLabelColor = Color.White,
-//                    disabledLabelColor = Color.White,
-                )
+                modifier = Modifier
+                    .weight(1f),
+                colors = TextFieldDefaults
+                    .colors(
+                        unfocusedContainerColor = Color.White,
+                    )
             )
             IconButton(
                 onClick = {
@@ -73,9 +69,13 @@ fun MainScreen(
                 )
             }
         }
-        Spacer(modifier = Modifier.height(5.dp))
+        Spacer(
+            modifier = Modifier
+                .height(5.dp)
+        )
         LazyColumn(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
         ) {
             items(itemsList.value) { item ->
                 ListItem(item, {

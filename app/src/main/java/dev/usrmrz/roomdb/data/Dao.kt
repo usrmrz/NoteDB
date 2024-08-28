@@ -1,4 +1,4 @@
-package dev.usrmrz.notesdb.data
+package dev.usrmrz.roomdb.data
 
 import androidx.room.Dao
 import androidx.room.Delete

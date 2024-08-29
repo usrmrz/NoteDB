@@ -1,6 +1,7 @@
 package dev.usrmrz.roomdb.ui.theme
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,6 +22,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.usrmrz.roomdb.MainViewModel
@@ -34,10 +37,16 @@ fun MainScreen(
 ) {
     val itemsList = mainViewModel.itemsList.collectAsState(
         initial = emptyList())
+    val focusManager = LocalFocusManager.current
+    val keyboardController = LocalSoftwareKeyboardController.current
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
+            .clickable {
+                focusManager.clearFocus()
+                keyboardController?.hide()
+            }
     ) {
         Row(
             modifier = Modifier
